@@ -27,15 +27,19 @@ print(some_list)
 #     print(f'Товар в корзине: ', item)
 # print(f'Кол-во товара в корзине: ', len(some_list))
 
-another_list = ['колбаса', 'тыква', 'хлеб', 'молоко', 'яйца']
-other_list = ['хлеб', 'молоко', 'яйца']
+# another_list = ['колбаса', 'тыква', 'хлеб', 'молоко', 'яйца']
+# other_list = ['хлеб', 'молоко', 'яйца']
 
-if another_list == some_list:
-    print('Значения совпадают. Всё верно!')
-else:
-    print('Значения разные. Увы!')
+# if another_list == some_list:
+#     print('Значения совпадают. Всё верно!')
+# else:
+#     print('Значения разные. Увы!')
 
-if other_list == some_list:
-    print('Значения совпадают. Всё верно!')
-else:
-    print('Значения разные. Увы!')
+# if other_list == some_list:
+#     print('Значения совпадают. Всё верно!')
+# else:
+#     print('Значения разные. Увы!')
+
+print(max(some_list)) #выводит максимальное значение по идексу?
+print(min(some_list)) #выводит минимальное занчение по индексу?
+print(sorted(some_list, key=None, reverse=False)) #сортирует значения в алфавитном порядке
