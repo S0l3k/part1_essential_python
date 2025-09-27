@@ -23,6 +23,19 @@ print(some_list)
 # print(second)
 # print(third)
 
-for item in some_list:
-    print(f'Товар в корзине: ', item)
-print(f'Кол-во товара в корзине: ', len(some_list))
+# for item in some_list:
+#     print(f'Товар в корзине: ', item)
+# print(f'Кол-во товара в корзине: ', len(some_list))
+
+another_list = ['колбаса', 'тыква', 'хлеб', 'молоко', 'яйца']
+other_list = ['хлеб', 'молоко', 'яйца']
+
+if another_list == some_list:
+    print('Значения совпадают. Всё верно!')
+else:
+    print('Значения разные. Увы!')
+
+if other_list == some_list:
+    print('Значения совпадают. Всё верно!')
+else:
+    print('Значения разные. Увы!')
