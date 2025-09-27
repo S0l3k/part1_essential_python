@@ -40,6 +40,38 @@ print(some_list)
 # else:
 #     print('Значения разные. Увы!')
 
-print(max(some_list)) #выводит максимальное значение по идексу?
-print(min(some_list)) #выводит минимальное занчение по индексу?
-print(sorted(some_list, key=None, reverse=False)) #сортирует значения в алфавитном порядке
+# print(max(some_list)) #выводит максимальное значение по идексу?
+# print(min(some_list)) #выводит минимальное занчение по индексу?
+# print(sorted(some_list, key=None, reverse=False)) #сортирует значения в алфавитном порядке
+
+some_list.append('хлеб')
+print(some_list)
+some_list.insert(3, 'бублик')
+print(some_list)
+
+first_hlem_index = some_list.index('хлеб') #говорит какой индекс в списке у нужного элемента, если их несколько, то выводит первый совпавший
+print(f'Элемент "хлеб" был добавлен на позицияю ', first_hlem_index )
+print(some_list.index('хлеб'))
+
+# some_list.remove('хлеб')
+# print(some_list)
+
+count = some_list.count('хлеб')
+print(count)
+
+last_item = some_list.pop() #без указания индекса удаляет последий элемент списка
+print(last_item)
+print(some_list)
+other_item = some_list.pop(3) #должен удалить бублик
+print(other_item)
+print(some_list)
+
+# some_list.clear()
+# print(some_list)
+
+some_list.sort(reverse=True)
+print(some_list) #в чем отличие от sorted()?
+
+some_list_copy = some_list.copy()
+print(some_list_copy.clear())
+print(some_list)
