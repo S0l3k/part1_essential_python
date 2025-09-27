@@ -4,3 +4,9 @@
 # empty_list = list()
 # print(type(empty_list))
 
+some_list = ['колбаса', 'тыква', 'хлеб', 'молоко', 'яйца']
+print(some_list)
+
+print(some_list[0])
+print(some_list[1])
+print(some_list[-1])
