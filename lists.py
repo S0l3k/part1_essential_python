@@ -11,5 +11,9 @@ print(some_list)
 # print(some_list[1])
 # print(some_list[-1])
 
-some_list[2] = 'картофель'
-print(some_list)
+# some_list[2] = 'картофель'
+# print(some_list)
+
+another_list = ['apple', 'eggs', 'milk', 'orange']
+combined_list = some_list + another_list
+print(combined_list)
