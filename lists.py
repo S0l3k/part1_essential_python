@@ -18,7 +18,11 @@ print(some_list)
 # combined_list = some_list + another_list
 # print(combined_list)
 
-first, second, third, other, othertwo = some_list
-print(first, type(first))
-print(second)
-print(third)
+# first, second, third, other, othertwo = some_list
+# print(first, type(first))
+# print(second)
+# print(third)
+
+for item in some_list:
+    print(f'Товар в корзине: ', item)
+print(f'Кол-во товара в корзине: ', len(some_list))
