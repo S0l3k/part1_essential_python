@@ -68,3 +68,16 @@ def slicer(tpl, rnd_el):
 print(slicer((1, 2, 3), 8))
 print(slicer((1, 8, 3, 4, 8, 8, 9, 2), 8))
 print(slicer((1, 2, 8, 5, 1, 2, 9), 8))
+
+def sieve(lst) -> tuple:
+    """Принимает список, должна сформировать кортеж с уникальными элементами и вернуть кортеж."""
+    
+    reversed_list = reversed(list)
+    enter_list_to_set = set(reversed_list)
+    set_to_tuple = tuple(enter_list_to_set)
+
+    return set_to_tuple
+
+print(sieve([1, 2, 3, 3, 2]))
+print(sieve([2, 1, 3, 1, 2, 5, 5, 9, 2, 0, 0]))
+print(sieve((1, 2, 3, 4, 5, 6, 7)))
