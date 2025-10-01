@@ -18,8 +18,8 @@
 # print(tpl_sort((5, 5, 3, 1, 9)))
 # print(tpl_sort((5, 5, 2.1, '1', 9)))
 
-START_INDEX = 0
-END_INDEX = -1
+# START_INDEX = 0
+# END_INDEX = -1
 
 def slicer(tpl, rnd_el):
     """Принимает кортеж и случайные элемент. Должен вернуть кортеж, начинающийся с первого 
@@ -42,17 +42,28 @@ def slicer(tpl, rnd_el):
     #         second_meet = tpl.index(rnd_el, first_meet)
     #         return tuple[first_meet:second_meet]
 
-    first_meet = None
-    second_meet = None
+    # first_meet = None
+    # second_meet = None
 
-    if rnd_el in tpl:
-        first_meet = tpl.index(rnd_el)
-    if tpl.count(rnd_el) > 1:
-        second_meet = tpl.index(rnd_el, first_meet + 1) + 1
-    else:
-        second_meet = END_INDEX
+    # if rnd_el in tpl:
+    #     first_meet = tpl.index(rnd_el)
+    # if tpl.count(rnd_el) > 1:
+    #     second_meet = tpl.index(rnd_el, first_meet + 1) + 1
+    # else:
+    #     second_meet = END_INDEX
     
-    return tpl[first_meet:second_meet]
+    # return tpl[first_meet:second_meet]
+
+    if rnd_el not in tpl:
+        return tuple()
+    
+    first_meet = tpl.index(rnd_el)
+
+    if tpl.count(rnd_el) == 1:
+        return tpl[first_meet:]
+    else:
+        second_meet = tpl.index(rnd_el, first_meet + 1)
+        return tpl[first_meet:second_meet + 1]
 
 print(slicer((1, 2, 3), 8))
 print(slicer((1, 8, 3, 4, 8, 8, 9, 2), 8))
