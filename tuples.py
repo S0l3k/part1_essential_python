@@ -71,12 +71,20 @@ print(slicer((1, 2, 8, 5, 1, 2, 9), 8))
 
 def sieve(lst) -> tuple:
     """Принимает список, должна сформировать кортеж с уникальными элементами и вернуть кортеж."""
-    
-    reversed_list = reversed(list)
-    enter_list_to_set = set(reversed_list)
-    set_to_tuple = tuple(enter_list_to_set)
 
-    return set_to_tuple
+    unique = []
+
+    for item in reversed(lst):
+        if item not in unique:
+            unique.append(item)
+    
+    return tuple(unique)
+    
+    # reversed_list = reversed(list)
+    # enter_list_to_set = set(reversed_list)
+    # set_to_tuple = tuple(enter_list_to_set)
+
+    # return set_to_tuple
 
 print(sieve([1, 2, 3, 3, 2]))
 print(sieve([2, 1, 3, 1, 2, 5, 5, 9, 2, 0, 0]))
