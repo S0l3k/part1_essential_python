@@ -89,3 +89,31 @@ def sieve(lst) -> tuple:
 print(sieve([1, 2, 3, 3, 2]))
 print(sieve([2, 1, 3, 1, 2, 5, 5, 9, 2, 0, 0]))
 print(sieve((1, 2, 3, 4, 5, 6, 7)))
+
+def del_from_tuple(tpl, el) -> tuple:
+    """Ф-ция должна удалять элемент (el) и возвращать новый кортеж без (el) элемента"""
+
+    if el not in tpl:
+        return tuple(tpl)
+    else:
+        el_index = tpl.index(el)
+        first_part_tpl = tpl[:el_index]
+        second_part_tpl = tpl[el_index+1:]
+        new_tpl = first_part_tpl + second_part_tpl
+        return new_tpl
+
+print(del_from_tuple((1, 2, 3), 1))
+print(del_from_tuple((1, 2, 3, 1, 2, 3, 4, 5, 2, 3, 4, 2, 4, 2), 3))
+print(del_from_tuple((2, 4, 6, 6, 4, 2), 9))
+
+# test = (1, 2, 3)
+# ind = test.index(2)
+# first_part = test[:ind]
+# second_part = test[ind+1:]
+# final_tpl = first_part + second_part
+# final_tpl_v2 = test[ind+1:ind] #не может так делать
+# print(ind)
+# print(first_part)
+# print(second_part)
+# print(final_tpl)
+# print(final_tpl_v2)
