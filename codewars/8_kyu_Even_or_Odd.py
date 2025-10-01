@@ -1,9 +1,9 @@
-def even_or_odd(number = int) -> None:
+def even_or_odd(number = int) -> str:
 
     if number % 2 == 0:
-        print('"Even"')
+        return 'Even'
     else:
-        print('"Odd"')
+        return 'Odd'
 
 
 print(even_or_odd(1))
