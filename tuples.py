@@ -132,13 +132,14 @@ students = (
    Student('Артур', '13', 5.8, 'Екатеринбург')
 )
 
-def good_students(tpl) -> None:
+def good_students(students) -> None:
     """Ф-ция получает кортеж с кортежами студентов. Вычесляет среднюю оценку по студентам.
     Выводи сообщение с именами студентов чья оценка выше или равна средней оценке."""
 
-    mid_mark = None
-    lst_good_students = []
+    # mid_mark = None
+    # lst_good_students = []
     total_mark = 0
+    good_students_list = []
 
     for student in students:
         total_mark += student.Mark
@@ -150,9 +151,10 @@ def good_students(tpl) -> None:
     
     for student in students:
         if student.Mark >= mid_mark:
-            lst_good_students.append[student.Name]
+            good_students_list.append(student.Name)
     
-    return print(f'Ученики {lst_good_students} в этом семестре хорошо учатся!')
+    # return print(f'Ученики {lst_good_students} в этом семестре хорошо учатся!')
+    print(f'Ученики {", ".join(good_students_list)} в этом семестре хорошо учатся!')
 
-good_students(Student)
+good_students(students)
 
