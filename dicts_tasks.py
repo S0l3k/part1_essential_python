@@ -7,20 +7,25 @@ points_for_letters = {1:['A', 'E', 'I', 'O', 'U', 'L', 'N', 'S', 'T', 'R',
             8:['J', 'X', 'Ш', 'Э', 'Ю'],
             10:['Q', 'Z', 'Ф', 'Щ', 'Ъ']}
 
+letter_points = {}
+for points, letters in points_for_letters.items():
+    for letter in letters:
+        letter_points[letter] = points
+
 def scrabble(inp_str) -> int:
     """На вход получает строку, разбивает её на символы и суммирует значения ключей"""
 
     sum_points = 0
 
     upper_case = inp_str.upper()
-    split_string = [char for char in upper_case]
 
-    for letter in split_string:
-        if letter in points_for_letters.values():
-            sum_points += points_for_letters.keys(letter)
+    for letter in upper_case:
+        if letter in letter_points:
+            sum_points += letter_points[letter]
         else:
-            print('Символы что вы указали несчитаются!')
+            print(f'Символы {letter} не учитывается!')
     print(f'Сумма очков: {sum_points}!')
+    return sum_points
 
 user_string = str(input('Введите текст и узнайте сколько баллов вы за это получите: '))
 
