@@ -27,6 +27,33 @@ def scrabble(inp_str) -> int:
     print(f'Сумма очков: {sum_points}!')
     return sum_points
 
-user_string = str(input('Введите текст и узнайте сколько баллов вы за это получите: '))
+# user_string = str(input('Введите текст и узнайте сколько баллов вы за это получите: '))
 
-scrabble(user_string)
+# scrabble(user_string)
+
+emails = {'mgu.edu': ['andrei_serov', 'alexander_pushkin', 'elena_belova', 'kirill_stepanov'],
+      	'gmail.com': ['alena.semyonova', 'ivan.polekhin', 'marina_abrabova'],
+      	'msu.edu': ['sergei.zharkov', 'julia_lyubimova', 'vitaliy.smirnoff'],
+      	'yandex.ru': ['ekaterina_ivanova', 'glebova_nastya'],
+      	'harvard.edu': ['john.doe', 'mark.zuckerberg', 'helen_hunt'],
+      	'mail.ru': ['roman.kolosov', 'ilya_gromov', 'masha.yashkina']}
+
+# print(emails.keys())
+# print(emails.get('mgu.edu'))
+
+# for domains, mails in emails:
+#     for mail in mails:
+#         print(f'{mail} + @ + {domains}')
+
+#моё решение с использованием списка
+emails_list = []
+
+for domain in emails.keys():
+    for email in emails.get(domain):
+        emails_list.append(email + '@' + domain)
+
+for address in sorted(emails_list):
+    print(address)
+
+#предлогаемое решение 
+# print(*sorted({i + '@' + k for k, v in emails.items() for i in v}), sep = '\n')
