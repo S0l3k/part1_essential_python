@@ -90,7 +90,7 @@
 
 #Математические операции над set
 #Объединение set
-set_1 = {1, 2, 4, 5}
+set_1 = {1, 2, 3, 4, 5}
 set_2 = {2, 3, 5, 6, 7}
 # set_3 = set_1 | set_2
 # print(set_3)
@@ -106,15 +106,30 @@ set_2 = {2, 3, 5, 6, 7}
 # print(set_2)
 # set_1 &= set_2 #то же самое что и intersection_update()
 
-#Разность set
-set_3 = set_1.difference(set_2)
-print(set_3)
-set_3 = set_1 - set_2 #то же самое что и difference()
-print(set_3)
+# #Разность set
+# set_3 = set_1.difference(set_2)
+# print(set_3)
+# set_3 = set_1 - set_2 #то же самое что и difference()
+# print(set_3)
 
-set_1.difference_update(set_2)
-print(set_1)
+# set_1.difference_update(set_2)
+# print(set_1)
 
-set_1 = {1, 2, 4, 5}
-set_1 -= set_2 #то же самое что и difference_update()
-print(set_1)
+# set_1 = {1, 2, 4, 5}
+# set_1 -= set_2 #то же самое что и difference_update()
+# print(set_1)
+
+#Симметрическая разность set
+# set_3 = set_1.symmetric_difference(set_2)
+# print(set_1)
+# print(set_2)
+# print(set_3)
+
+# set_4 = set_1 ^ set_2
+# print(set_4) #то же самое что и symmetric_difference()
+
+# set_1.symmetric_difference_update(set_2)
+# print(set_1)
+
+set_2 ^= set_1 #то же самое что и symmetric_difference_update()
+print(set_2)
