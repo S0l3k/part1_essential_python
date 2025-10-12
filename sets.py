@@ -66,8 +66,13 @@
 
 #Удаление элемента из set через remove()
 set_1 = {1, 2, 3, 4, 5}
-set_1.remove(3)
-print(set_1)
-set_1.remove(6) #Если значение нет в set, выдаст исключение
-print(set_1)
+# set_1.remove(3)
+# print(set_1)
+# set_1.remove(6) #Если значение нет в set, выдаст исключение
+# print(set_1)
 
+#Удаление элемента из set через discard()
+set_1.discard(2)
+print(set_1)
+set_1.discard(6) #Если значения нет в set, работа кода продолжиться, действие не сделается
+print(set_1)
