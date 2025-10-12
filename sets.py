@@ -42,3 +42,14 @@ set_1.add(1)
 print(set_1)
 set_1.add(6)
 print(set_1)
+
+#Добавление элемнтов в set через update() - несколько элементо за раз (списки, словари, кортежи)
+list_1 = [1, 2, 3, 4, 6, 7, 8, 8, 9]
+dict_1 = {'a': 1, 'b': 2, 'c': 4, '9': 9, '0': 0}
+tuple_1 = ('Name', 16, 'City', 0, 9)
+set_1.update(list_1)
+print(set_1)
+set_1.update(dict_1)
+print(set_1)
+set_1.update(tuple_1)
+print(set_1)
