@@ -1,135 +1,154 @@
-# # #Set - это изменяемый изменяемый набор данных, который хранит в себе неупорядоченные и 
-# # # уникальные значения в виде хеш значения. Может содержать в себе только Неизменяемые типы данных.
+# # # #Set - это изменяемый изменяемый набор данных, который хранит в себе неупорядоченные и 
+# # # # уникальные значения в виде хеш значения. Может содержать в себе только Неизменяемые типы данных.
 
-# # #Создание set через {}
-# # set_1 = {1, 2, 2, 3, 4, 4, 5}
+# # # #Создание set через {}
+# # # set_1 = {1, 2, 2, 3, 4, 4, 5}
+# # # print(set_1)
+
+# # # #Создание set через функцию set()
+# # # set_2 = set([1, 2, 2, 3, 3, 3, 4, 5, 5])
+# # # print(set_2)
+
+# # # string_3 = 'Some text for set!'
+# # # set_3 = set(string_3)
+# # # print(set_3) #Если регистр у символов разный, то добавляет оба, хотя значение одно
+
+# # # num_int_4 = 12345678999
+# # # set_4 = set(str(num_int_4)) #Необходимо перевести в строку, иначе TypeError
+# # # print(set_4)
+
+# # # dict_5 = {'a': 1, 'b': 2, 'c': 3, 'd': 3}
+# # # set_5 = set(dict_5) #В качестве значений принимает ключи, значения отбрасываются
+# # # print(set_5)
+
+# # # #Создание set через генератор (короче и читаемей)
+# # # set_6 = {x**2 for x in range(10) if x%2 == 0}
+# # # print(set_6)
+
+# # # #Создание set с заполнением через цикл (разница очевидна)
+# # # set_7 = set()
+# # # for x in range(10):
+# # #     if x%2 == 0:
+# # #         set_7.add(x**2)
+# # # print(set_7)
+
+# # # #Создание set через frozenset (создал одназды и забыл, изменить значения нельзя)
+# # # set_8 = frozenset([1, 2, 2, 3, 3, 3, 4, 5])
+# # # print(set_8)
+
+# # #Добавление элемента в set через add() - один элемента за раз
+# # set_1 = {1, 2, 3, 4, 5}
+# # set_1.add(1)
+# # print(set_1)
+# # set_1.add(6)
 # # print(set_1)
 
-# # #Создание set через функцию set()
-# # set_2 = set([1, 2, 2, 3, 3, 3, 4, 5, 5])
+# # #Добавление элемнтов в set через update() - несколько элементо за раз (списки, словари, кортежи)
+# # list_1 = [1, 2, 3, 4, 6, 7, 8, 8, 9]
+# # dict_1 = {'a': 1, 'b': 2, 'c': 4, '9': 9, '0': 0}
+# # tuple_1 = ('Name', 16, 'City', 0, 9)
+# # set_1.update(list_1)
+# # print(set_1)
+# # set_1.update(dict_1)
+# # print(set_1)
+# # set_1.update(tuple_1)
+# # print(set_1)
+
+# # #Добавление элементов в set через union() - объединяет 2 set'а в 1
+# # set_2 = {'Уникальное значение'}
 # # print(set_2)
+# # set_3 = set_1.union(set_2)
+# # print(set_3)
 
-# # string_3 = 'Some text for set!'
-# # set_3 = set(string_3)
-# # print(set_3) #Если регистр у символов разный, то добавляет оба, хотя значение одно
+# # set_4 = {'Другое уникальное значение'}
+# # set_1 = set_1.union(set_4)
+# # print(set_1)
 
-# # num_int_4 = 12345678999
-# # set_4 = set(str(num_int_4)) #Необходимо перевести в строку, иначе TypeError
+# #Удаление элемента из set через remove()
+# # set_1 = {1, 2, 3, 4, 5}
+# # set_1.remove(3)
+# # print(set_1)
+# # set_1.remove(6) #Если значение нет в set, выдаст исключение
+# # print(set_1)
+
+# #Удаление элемента из set через discard()
+# # set_1.discard(2)
+# # print(set_1)
+# # set_1.discard(6) #Если значения нет в set, работа кода продолжиться, действие не сделается
+# # print(set_1)
+
+# #Удаление элемнта из set через pop()
+# # set_1.pop() #Удаляет первый элемент в set
+# # print(set_1)
+# # set_1.pop()
+# # print(set_1)
+
+# #Удаление элемента из set через clear()
+# # print(set_1)
+# # set_1.clear() #удаляет все элементы
+# # print(set_1)
+
+# #Математические операции над set
+# #Объединение set
+# set_1 = {1, 2, 3, 4, 5}
+# set_2 = {2, 3, 5, 6, 7}
+# # set_3 = set_1 | set_2
+# # print(set_3)
+
+# # #Пересечение set
+# # set_3 = set_1.intersection(set_2)
+# # print(set_3)
+# # set_4 = set_1 & set_2 #делает то же самое что и intersection()
 # # print(set_4)
 
-# # dict_5 = {'a': 1, 'b': 2, 'c': 3, 'd': 3}
-# # set_5 = set(dict_5) #В качестве значений принимает ключи, значения отбрасываются
-# # print(set_5)
+# # set_1.intersection_update(set_2) #удаляет из исходнога set не пересекающиеся элементы
+# # print(set_1)
+# # print(set_2)
+# # set_1 &= set_2 #то же самое что и intersection_update()
 
-# # #Создание set через генератор (короче и читаемей)
-# # set_6 = {x**2 for x in range(10) if x%2 == 0}
-# # print(set_6)
+# # #Разность set
+# # set_3 = set_1.difference(set_2)
+# # print(set_3)
+# # set_3 = set_1 - set_2 #то же самое что и difference()
+# # print(set_3)
 
-# # #Создание set с заполнением через цикл (разница очевидна)
-# # set_7 = set()
-# # for x in range(10):
-# #     if x%2 == 0:
-# #         set_7.add(x**2)
-# # print(set_7)
+# # set_1.difference_update(set_2)
+# # print(set_1)
 
-# # #Создание set через frozenset (создал одназды и забыл, изменить значения нельзя)
-# # set_8 = frozenset([1, 2, 2, 3, 3, 3, 4, 5])
-# # print(set_8)
+# # set_1 = {1, 2, 4, 5}
+# # set_1 -= set_2 #то же самое что и difference_update()
+# # print(set_1)
 
-# #Добавление элемента в set через add() - один элемента за раз
-# set_1 = {1, 2, 3, 4, 5}
-# set_1.add(1)
-# print(set_1)
-# set_1.add(6)
-# print(set_1)
+# #Симметрическая разность set
+# # set_3 = set_1.symmetric_difference(set_2)
+# # print(set_1)
+# # print(set_2)
+# # print(set_3)
 
-# #Добавление элемнтов в set через update() - несколько элементо за раз (списки, словари, кортежи)
-# list_1 = [1, 2, 3, 4, 6, 7, 8, 8, 9]
-# dict_1 = {'a': 1, 'b': 2, 'c': 4, '9': 9, '0': 0}
-# tuple_1 = ('Name', 16, 'City', 0, 9)
-# set_1.update(list_1)
-# print(set_1)
-# set_1.update(dict_1)
-# print(set_1)
-# set_1.update(tuple_1)
-# print(set_1)
+# # set_4 = set_1 ^ set_2
+# # print(set_4) #то же самое что и symmetric_difference()
 
-# #Добавление элементов в set через union() - объединяет 2 set'а в 1
-# set_2 = {'Уникальное значение'}
+# # set_1.symmetric_difference_update(set_2)
+# # print(set_1)
+
+# set_2 ^= set_1 #то же самое что и symmetric_difference_update()
 # print(set_2)
-# set_3 = set_1.union(set_2)
-# print(set_3)
 
-# set_4 = {'Другое уникальное значение'}
-# set_1 = set_1.union(set_4)
-# print(set_1)
+set_1 = {1, 2, 3, 4, 5, 6}
+set_2 = {1, 2, 6, 7, 8, 9}
+set_3 = {2, 5, 6}
+set_4 = {7, 8, 9}
 
-#Удаление элемента из set через remove()
-# set_1 = {1, 2, 3, 4, 5}
-# set_1.remove(3)
-# print(set_1)
-# set_1.remove(6) #Если значение нет в set, выдаст исключение
-# print(set_1)
+#Проверяет элемент на наличего оного в множестве
+print(8 in set_1)
+print(1 in set_1)
 
-#Удаление элемента из set через discard()
-# set_1.discard(2)
-# print(set_1)
-# set_1.discard(6) #Если значения нет в set, работа кода продолжиться, действие не сделается
-# print(set_1)
+#Проверяет является ли левоем множество подмножеством правого
+print(set_3.issubset(set_1))
+print(set_3.issubset(set_2))
+print(set_3.issubset(set_4))
 
-#Удаление элемнта из set через pop()
-# set_1.pop() #Удаляет первый элемент в set
-# print(set_1)
-# set_1.pop()
-# print(set_1)
-
-#Удаление элемента из set через clear()
-# print(set_1)
-# set_1.clear() #удаляет все элементы
-# print(set_1)
-
-#Математические операции над set
-#Объединение set
-set_1 = {1, 2, 3, 4, 5}
-set_2 = {2, 3, 5, 6, 7}
-# set_3 = set_1 | set_2
-# print(set_3)
-
-# #Пересечение set
-# set_3 = set_1.intersection(set_2)
-# print(set_3)
-# set_4 = set_1 & set_2 #делает то же самое что и intersection()
-# print(set_4)
-
-# set_1.intersection_update(set_2) #удаляет из исходнога set не пересекающиеся элементы
-# print(set_1)
-# print(set_2)
-# set_1 &= set_2 #то же самое что и intersection_update()
-
-# #Разность set
-# set_3 = set_1.difference(set_2)
-# print(set_3)
-# set_3 = set_1 - set_2 #то же самое что и difference()
-# print(set_3)
-
-# set_1.difference_update(set_2)
-# print(set_1)
-
-# set_1 = {1, 2, 4, 5}
-# set_1 -= set_2 #то же самое что и difference_update()
-# print(set_1)
-
-#Симметрическая разность set
-# set_3 = set_1.symmetric_difference(set_2)
-# print(set_1)
-# print(set_2)
-# print(set_3)
-
-# set_4 = set_1 ^ set_2
-# print(set_4) #то же самое что и symmetric_difference()
-
-# set_1.symmetric_difference_update(set_2)
-# print(set_1)
-
-set_2 ^= set_1 #то же самое что и symmetric_difference_update()
-print(set_2)
+#Проверяет является ли ливое множестов подмножеством правого (<, <=) или надмножеством (>, >=)
+print(set_1 <= set_2)
+print(set_1 > set_3)
+print(set_1 < set_4)
