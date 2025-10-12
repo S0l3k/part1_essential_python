@@ -53,3 +53,13 @@ set_1.update(dict_1)
 print(set_1)
 set_1.update(tuple_1)
 print(set_1)
+
+#Добавление элементов в set через union() - объединяет 2 set'а в 1
+set_2 = {'Уникальное значение'}
+print(set_2)
+set_3 = set_1.union(set_2)
+print(set_3)
+
+set_4 = {'Другое уникальное значение'}
+set_1 = set_1.union(set_4)
+print(set_1)
