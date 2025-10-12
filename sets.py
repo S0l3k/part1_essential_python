@@ -95,13 +95,26 @@ set_2 = {2, 3, 5, 6, 7}
 # set_3 = set_1 | set_2
 # print(set_3)
 
-#Пересечение set
-set_3 = set_1.intersection(set_2)
-print(set_3)
-set_4 = set_1 & set_2 #делает то же самое что и intersection()
-print(set_4)
+# #Пересечение set
+# set_3 = set_1.intersection(set_2)
+# print(set_3)
+# set_4 = set_1 & set_2 #делает то же самое что и intersection()
+# print(set_4)
 
-set_1.intersection_update(set_2) #удаляет из исходнога set не пересекающиеся элементы
+# set_1.intersection_update(set_2) #удаляет из исходнога set не пересекающиеся элементы
+# print(set_1)
+# print(set_2)
+# set_1 &= set_2 #то же самое что и intersection_update()
+
+#Разность set
+set_3 = set_1.difference(set_2)
+print(set_3)
+set_3 = set_1 - set_2 #то же самое что и difference()
+print(set_3)
+
+set_1.difference_update(set_2)
 print(set_1)
-print(set_2)
-set_1 &= set_2 #то же самое что и intersection_update()
+
+set_1 = {1, 2, 4, 5}
+set_1 -= set_2 #то же самое что и difference_update()
+print(set_1)
