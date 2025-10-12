@@ -78,7 +78,12 @@ set_1 = {1, 2, 3, 4, 5}
 # print(set_1)
 
 #Удаление элемнта из set через pop()
-set_1.pop() #Удаляет первый элемент в set
+# set_1.pop() #Удаляет первый элемент в set
+# print(set_1)
+# set_1.pop()
+# print(set_1)
+
+#Удаление элемента из set через clear()
 print(set_1)
-set_1.pop()
+set_1.clear() #удаляет все элементы
 print(set_1)
