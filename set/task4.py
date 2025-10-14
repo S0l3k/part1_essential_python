@@ -3,3 +3,25 @@
 # 1 - «Супермножество не обнаружено»
 # 2 – «Объект {X} является чистым супермножеством»
 # 3 – «Множества равны»
+
+def superset(set1, set2):
+    """"14.10.2025"""
+
+    if set1 > set2:
+        print(f'Объект {set1} является чистым супермножеством')
+    elif set1 == set2:
+        print('Множества равны')
+    elif set1 < set2:
+        print(f'Объект {set2} является чистым супермножеством')
+    else:
+        print('Супермножество не обнаружено')
+
+set_1 = {1, 8, 3, 5}
+set_2 = {3, 5}
+set_3 = {5, 3, 8, 1}
+set_4 = {90, 100}
+
+print(superset(set_1, set_2))
+print(superset(set_1, set_3))
+print(superset(set_2, set_3))
+print(superset(set_4, set_2))
